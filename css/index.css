@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+
+    /* Colors */
+    --color-background: #F6F2EC;    /* Color de fondo (crema/blanco roto) */
+    --color-text: #1A1A1A;          /* Texto y botones (negro suave) */
+    --color-accent: #EAD2CB;        /* Detalles y fondos de productos (rosa suave) */
+    --color-secondary: #D9C7B8;     /* Secciones secundarias (beige/nude) */
+    --color-white: #FFFFFF;         /* Fondo de inputs */
+
+
+    /* Sizes */
+    --size-xxs: 8px;
+    --size-xs: 10px;
+    --size-sm: 16px;
+    --size-md: 32px;
+    --size-ml: 48px;
+    --size-lg: 64px;
+
+    --size-block: 964px;
+    --size-canvas: 1440px;
+
+    /* Radius */
+    --radius-small: .3125rem;
+
+    /* Fonts */
+    --font-h1: 500 clamp(48px, 5vw, 64px) "DM Sans", sans-serif;
+    --font-h2: 500 clamp(24px, 5vw, 34px) "DM Sans", sans-serif;
+    --font-h3: 500 clamp(19px, 5vw, 24px) "DM Sans", sans-serif;
+    --font-h4: 400 clamp(17px, 5vw, 19px) "Inter", sans-serif;
+    --font-p: 400 15px "Inter", sans-serif;
+    --font-link: 400 15px "Inter", sans-serif;
+    --font-button: 500 13px "Jost", sans-serif;
+}
+
+
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Instrument Sans", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Instrument Sans", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* Components */
+
+h1,
+.heading-h1 {
+    font: var(--font-h1);
+}
+
+h2,
+.heading-h2 {
+    font: var(--font-h2);
+}
+
+h3,
+.heading-h3 {
+    font: var(--font-h3);
+}
+
+h4,
+.heading-h4 {
+    font: var(--font-h4);
+}
+
+p,
+span,
+li,
+.font-p {
+    font: var(--font-p);
+}
+
+a,
+.font-link {
+    font: var(--font-link);
+}
+
+.btn {
+    font: var(--font-button);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: var(--size-xs) var(--size-md);
+    display: inline-flex;
+    gap: var(--size-xs);
+    align-items: center;
+    justify-content: center;
+    border-radius: 6.25rem;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: opacity 250ms, border 250ms;
+
+    &.btn--dark {
+        background-color: var(--color-text);
+        color: var(--color-background);
+    }
+
+    &.btn--light {
+        background-color: var(--color-background);
+        color: var(--color-text);
+    }
+
+    &.btn--brand {
+        background-color: var(--color-accent);
+        color: var(--color-text);
+        padding: var(--size-sm) var(--size-sm);
+        justify-content: center;
+        border: none;
+    }
+
+    &:hover {
+        opacity: 80%;
+    }
+}
+
+select {
+    border-right: var(--size-sm) solid var(--color-white);
+}
+
+input,
+select {
+    padding: var(--size-sm);
+    border-radius: 6.25rem;
+    background-color: var(--color-white);
+    border: .0625rem solid transparent;
+
+    &:hover {
+        opacity: 80%;
+    }
+
+    &:focus {
+        border: .0625rem solid var(--color-text);
+        outline: none;
+    }
+
+    &::placeholder {
+        color: var(--color-text);
+        font: var(--font-p);
+        opacity: 30%;
+    }
+}
+
+label:not([for="acceptance"]) {
+    display: none;
+}
+
+.menu-link {
+    opacity: 50%;
+    transition: opacity 200ms;
+
+    &:hover {
+        opacity: 100%;
+    }
+}
+
+.img-radius {
+    border-radius: var(--radius-small);
+}
+
+.block {
+    width: 100%;
+    max-width: var(--size-block);
+    margin: 0 auto;
+}
+
+.section {
+    padding: var(--size-lg) var(--size-sm);
+    max-width: var(--size-canvas);
+    margin: 0 auto;
+
+    @media (max-width: 48rem) {
+        padding: var(--size-ml) var(--size-sm);
+    }
+}
+
+.section--secondary {
+    background-color: var(--color-secondary);
+}
+
+.red {
+    color: var(--color-error);
+}
