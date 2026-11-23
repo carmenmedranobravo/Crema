@@ -27,7 +27,9 @@
                 <li><a class="menu-link" href="login.html">Account</a></li>
                 <li><a class="menu-link" href="#">Cart (0)</a></li>
             </ul>
-            <a class="open__menu" href="#popup-menu"><i class="ri-menu-line"></i></a>
+            <li class="open__menu-item">
+                <a class="open__menu" href="#popup-menu" aria-label="Open menu"><i class="ri-menu-line"></i></a>
+            </li>
             <div id="popup-menu">
                 <a class="close-popup" href="#"><i class="ri-close-line"></i></a>
                 <ul class="popup-menu__nav">
@@ -49,9 +51,9 @@
                     <source src="media/hero-home.mp4" type="video/mp4">
                 </video>
                 <div class="hero__block block">
+                    <span class="hero__tag">The morning collection</span>
                     <h1>Therapy is expensive, get a coffee.</h1>
-                    <h2 class="heading-h4">Small-batch ceramic mugs for your daily rituals.</h2>
-                    <a href="shop.html" class="btn btn--light">Shop now <i class="ri-arrow-right-up-line"></i></a>
+                    <a href="shop.html" class="btn btn--outline">Shop now</a>
                 </div>
             </div>
         </section>
@@ -59,65 +61,102 @@
         <!------------------- Products ------------------->
         <section class="products section">
             <div class="products__block block">
-                <!-- PEC 5: este listado pasará a ser un slider con JavaScript (flechas y arrastre) -->
                 <ul class="products__content">
                     <li class="products__card">
                         <a href="pdp.html" class="products__link">
                             <div class="products__head">
-                                <span class="products__word">mug</span>
-                                <span class="products__tag">only at crema</span>
+                                <span class="products__word">love mug</span>
                             </div>
                             <div class="products__image">
-                                <img src="media/product-green-mug.webp" alt="Pistachio green glazed ceramic mug">
+                                <picture>
+                                    <source srcset="media/taza1.avif" type="image/avif">
+                                    <source srcset="media/taza1.webp" type="image/webp">
+                                    <img class="img-radius" src="media/taza1.jpg"
+                                        alt="Cream ceramic mug with hand-lettered 'I love you'">
+                                </picture>
+                                <picture class="products__hover">
+                                    <source srcset="media/taza1-hover.avif" type="image/avif">
+                                    <source srcset="media/taza1-hover.webp" type="image/webp">
+                                    <img class="img-radius" src="media/taza1-hover.jpg" alt="">
+                                </picture>
                             </div>
                             <div class="products__info">
-                                <h3 class="heading-h4">Pistachio mug</h3>
+                                <p class="products__rating">
+                                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                        class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                        class="ri-star-half-fill"></i>
+                                    (476)
+                                </p>
                                 <span class="heading-h4">€26.00</span>
                             </div>
-                            <p>Glossy glaze, chunky handle</p>
+                            <p>Cream glaze with a hand-lettered love note</p>
                         </a>
                     </li>
                     <li class="products__card">
                         <a href="pdp.html" class="products__link">
                             <div class="products__head">
-                                <span class="products__word">cup</span>
-                                <span class="products__tag">only at crema</span>
+                                <span class="products__word">coffee mug</span>
                             </div>
                             <div class="products__image">
-                                <img src="media/product-star-mug.webp" alt="Raw stoneware cup with hand-drawn stars">
+                                <picture>
+                                    <source srcset="media/taza3.avif" type="image/avif">
+                                    <source srcset="media/taza3.webp" type="image/webp">
+                                    <img class="img-radius" src="media/taza3.jpg"
+                                        alt="Two stacked mugs painted with 'Coffee please'">
+                                </picture>
+                                <picture class="products__hover">
+                                    <source srcset="media/taza3-hover.avif" type="image/avif">
+                                    <source srcset="media/taza3-hover.webp" type="image/webp">
+                                    <img class="img-radius" src="media/taza3-hover.jpg" alt="">
+                                </picture>
                             </div>
                             <div class="products__info">
-                                <h3 class="heading-h4">Star cup</h3>
+                                <p class="products__rating">
+                                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                        class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                        class="ri-star-half-fill"></i>
+                                    (476)
+                                </p>
                                 <span class="heading-h4">€22.00</span>
                             </div>
-                            <p>Hand-drawn stars on raw clay</p>
+                            <p>Stackable mugs with bold brush lettering</p>
                         </a>
                     </li>
                     <li class="products__card">
                         <a href="pdp.html" class="products__link">
                             <div class="products__head">
                                 <span class="products__word">mug</span>
-                                <span class="products__tag">only at crema</span>
                             </div>
                             <div class="products__image">
-                                <img src="media/product-striped-mug.webp"
-                                    alt="White ceramic mug with hand-painted brown stripes">
+                                <picture>
+                                    <source srcset="media/taza2.avif" type="image/avif">
+                                    <source srcset="media/taza2.webp" type="image/webp">
+                                    <img class="img-radius" src="media/taza2.jpg"
+                                        alt="Pinched stoneware mug with brown painted stripes">
+                                </picture>
+                                <picture class="products__hover">
+                                    <source srcset="media/taza2-hover.avif" type="image/avif">
+                                    <source srcset="media/taza2-hover.webp" type="image/webp">
+                                    <img class="img-radius" src="media/taza2-hover.jpg" alt="">
+                                </picture>
                             </div>
-                            <p class="products__rating">
-                                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                                    class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
-                                (476)
-                            </p>
                             <div class="products__info">
-                                <h3 class="heading-h4">Striped mug</h3>
+                                <p class="products__rating">
+                                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                        class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                        class="ri-star-half-fill"></i>
+                                    (476)
+                                </p>
                                 <span class="heading-h4">€28.00</span>
                             </div>
-                            <p>Hand-painted cocoa stripes</p>
+                            <p>Pinched stoneware with hand-painted cocoa stripes</p>
                         </a>
                     </li>
                 </ul>
+
             </div>
         </section>
+
     </main>
 
     <!------------------- Footer ------------------->
