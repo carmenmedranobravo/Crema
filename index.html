@@ -1,120 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="icon" href="media/icono-crema.svg" type="image/svg+xml"> 
+    <link rel="icon" href="media/icono-crema.svg" type="image/svg+xml">
     <title>Crema</title>
 </head>
 
 <body>
     <!------------------- Cabecera ------------------->
-        <header class="header header--overlay">
+    <header class="header header--overlay">
         <nav>
-            <a class="open__menu" href="#popup-menu" aria-label="Open menu"><i class="ri-menu-line"></i></a>
             <ul class="header__nav">
                 <li><a class="menu-link" href="shop.html">Shop</a></li>
                 <li><a class="menu-link" href="about.html">About</a></li>
                 <li><a class="menu-link" href="futures.html">Futures</a></li>
             </ul>
+            <a class="open__menu" href="#popup-menu" aria-label="Open menu"><i class="ri-menu-line"></i></a>
             <div id="popup-menu">
-                <a class="close-popup" href="#" aria-label="Close menu"><i class="ri-close-line"></i></a>
+                <a class="close-popup" href="#" aria-label="Close menu"> <i class="ri-close-line"></i></a>
                 <ul class="popup-menu__nav">
                     <li><a class="heading-h2" href="shop.html">Shop</a></li>
                     <li><a class="heading-h2" href="about.html">About</a></li>
                     <li><a class="heading-h2" href="futures.html">Futures</a></li>
                     <li><a class="heading-h2" href="login.html">Account</a></li>
+                    <li><a class="heading-h2" href="#">Cart (0)</a></li>
                 </ul>
             </div>
         </nav>
-
-        <a class="header__logo" href="index.html">
-            <img src="media/logo-crema-cream.svg" alt="Crema">
-        </a>
-
-        <ul class="header__actions">
-            <li class="header__item--desktop"><a class="menu-link" href="#">Search</a></li>
-            <li class="header__item--desktop"><a class="menu-link" href="login.html">Account</a></li>
+        <img class="header__logo" src="media/logo-crema-cream.svg" alt="Crema">
+        <ul class="header__nav header__nav--right">
+            <li><a class="menu-link" href="#">Search</a></li>
+            <li><a class="menu-link" href="login.html">Account</a></li>
             <li><a class="menu-link" href="#">Cart (0)</a></li>
         </ul>
     </header>
-    <main>
-    <!------------------- Hero ------------------->
-    <section class="hero">
-    <div class="hero__background hero__background--home img-radius">
-        <video class="hero__video" autoplay muted loop playsinline poster="media/hero-home.webp">
-            <source src="media/hero-home.mp4" type="video/mp4">
-        </video>
-        <div class="hero__content">
-            <p class="hero__eyebrow">The morning collection</p>
-            <h1>Therapy is expensive , get a coffy</h1>
-            <a href="shop.html" class="btn btn--outline">Shop now</a>
-        </div>
-    </div>
-</section>
 
-<!------------------- Products ------------------->
-<section class="products section" aria-label="Featured products">
-    <ul class="carousel">
-        <li class="product-card">
-            <a class="product-card__link" href="pdp.html">
-                <div class="product-card__top">
-                    <span class="product-card__word" aria-hidden="true">mug</span>
-                    <span class="product-card__tag">only at crema</span>
+    <main>
+        <!------------------- Hero ------------------->
+        <section class="hero">
+            <div class="hero__background img-radius">
+                <video class="hero__video" autoplay muted loop playsinline poster="media/hero-home.webp">
+                    <source src="media/hero-home.mp4" type="video/mp4">
+                </video>
+                <div class="hero__block block">
+                    <h1>Therapy is expensive, get a coffee.</h1>
+                    <h2 class="heading-h4">Small-batch ceramic mugs for your daily rituals.</h2>
+                    <a href="shop.html" class="btn btn--light">Shop now <i class="ri-arrow-right-up-line"></i></a>
                 </div>
-                <img class="product-card__image" src="media/product-green-mug.webp" alt="Pistachio green glazed ceramic mug">
-                <div class="product-card__info">
-                    <div class="product-card__row">
-                        <h3 class="product-card__name">Pistachio mug</h3>
-                        <p class="product-card__price">€26.00</p>
-                    </div>
-                    <p class="product-card__desc">Glossy glaze, chunky handle</p>
-                </div>
-            </a>
-        </li>
-        <li class="product-card">
-            <a class="product-card__link" href="pdp.html">
-                <div class="product-card__top">
-                    <span class="product-card__word" aria-hidden="true">cup</span>
-                    <span class="product-card__tag">only at crema</span>
-                </div>
-                <img class="product-card__image" src="media/product-star-mug.webp" alt="Raw stoneware cup with hand-drawn stars">
-                <div class="product-card__info">
-                    <div class="product-card__row">
-                        <h3 class="product-card__name">Star cup</h3>
-                        <p class="product-card__price">€22.00</p>
-                    </div>
-                    <p class="product-card__desc">Hand-drawn stars on raw clay</p>
-                </div>
-            </a>
-        </li>
-        <li class="product-card">
-            <a class="product-card__link" href="pdp.html">
-                <div class="product-card__top">
-                    <span class="product-card__word" aria-hidden="true">mug</span>
-                    <span class="product-card__tag">only at crema</span>
-                </div>
-                <img class="product-card__image" src="media/product-striped-mug.webp" alt="White ceramic mug with hand-painted brown stripes">
-                <div class="product-card__info">
-                    <p class="product-card__rating">
-                        <span class="sr-only">Rated 4.5 out of 5</span>
-                        <span aria-hidden="true">
-                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
-                        </span>
-                        (476)
-                    </p>
-                    <div class="product-card__row">
-                        <h3 class="product-card__name">Striped mug</h3>
-                        <p class="product-card__price">€28.00</p>
-                    </div>
-                    <p class="product-card__desc">Hand-painted cocoa stripes</p>
-                </div>
-            </a>
-        </li>
-    </ul>
-</section>
-</main>
+            </div>
+        </section>
+
+        <!------------------- Products ------------------->
+        <section class="products section">
+            <div class="products__block block">
+                <ul class="products__content">
+                    <li class="products__card">
+                        <a href="pdp.html" class="products__link">
+                            <div class="products__head">
+                                <span class="products__word">mug</span>
+                                <span class="products__tag">only at crema</span>
+                            </div>
+                            <div class="products__image">
+                                <img src="media/product-green-mug.webp" alt="Pistachio green glazed ceramic mug">
+                            </div>
+                            <div class="products__info">
+                                <h3 class="heading-h4">Pistachio mug</h3>
+                                <span class="heading-h4">€26.00</span>
+                            </div>
+                            <p>Glossy glaze, chunky handle</p>
+                        </a>
+                    </li>
+                    <li class="products__card">
+                        <a href="pdp.html" class="products__link">
+                            <div class="products__head">
+                                <span class="products__word">cup</span>
+                                <span class="products__tag">only at crema</span>
+                            </div>
+                            <div class="products__image">
+                                <img src="media/product-star-mug.webp" alt="Raw stoneware cup with hand-drawn stars">
+                            </div>
+                            <div class="products__info">
+                                <h3 class="heading-h4">Star cup</h3>
+                                <span class="heading-h4">€22.00</span>
+                            </div>
+                            <p>Hand-drawn stars on raw clay</p>
+                        </a>
+                    </li>
+                    <li class="products__card">
+                        <a href="pdp.html" class="products__link">
+                            <div class="products__head">
+                                <span class="products__word">mug</span>
+                                <span class="products__tag">only at crema</span>
+                            </div>
+                            <div class="products__image">
+                                <img src="media/product-striped-mug.webp" alt="White ceramic mug with hand-painted brown stripes">
+                            </div>
+                            <p class="products__rating">
+                                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                                (476)
+                            </p>
+                            <div class="products__info">
+                                <h3 class="heading-h4">Striped mug</h3>
+                                <span class="heading-h4">€28.00</span>
+                            </div>
+                            <p>Hand-painted cocoa stripes</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>
