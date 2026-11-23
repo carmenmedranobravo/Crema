@@ -18,26 +18,30 @@
                 <li><a class="menu-link" href="shop.html">Shop</a></li>
                 <li><a class="menu-link" href="about.html">About</a></li>
                 <li><a class="menu-link" href="futures.html">Futures</a></li>
+                <li class="header__logo-item">
+                    <a href="index.html" aria-label="Crema, home">
+                        <img class="header__logo" src="media/logo-crema-cream.svg" alt="Crema">
+                    </a>
+                </li>
+                <li><a class="menu-link" href="#">Search</a></li>
+                <li><a class="menu-link" href="login.html">Account</a></li>
+                <li><a class="menu-link" href="#">Cart (0)</a></li>
+                <li class="open__menu-item">
+                    <a class="open__menu" href="#popup-menu" aria-label="Open menu"><i class="ri-menu-line"></i></a>
+                </li>
             </ul>
-            <a class="open__menu" href="#popup-menu" aria-label="Open menu"><i class="ri-menu-line"></i></a>
-            <div id="popup-menu">
-                <a class="close-popup" href="#" aria-label="Close menu"> <i class="ri-close-line"></i></a>
-                <ul class="popup-menu__nav">
-                    <li><a class="heading-h2" href="shop.html">Shop</a></li>
-                    <li><a class="heading-h2" href="about.html">About</a></li>
-                    <li><a class="heading-h2" href="futures.html">Futures</a></li>
-                    <li><a class="heading-h2" href="login.html">Account</a></li>
-                    <li><a class="heading-h2" href="#">Cart (0)</a></li>
-                </ul>
-            </div>
         </nav>
-        <img class="header__logo" src="media/logo-crema-cream.svg" alt="Crema">
-        <ul class="header__nav header__nav--right">
-            <li><a class="menu-link" href="#">Search</a></li>
-            <li><a class="menu-link" href="login.html">Account</a></li>
-            <li><a class="menu-link" href="#">Cart (0)</a></li>
-        </ul>
     </header>
+    <div id="popup-menu">
+        <a class="close-popup" href="#" aria-label="Close menu"><i class="ri-close-line"></i></a>
+        <ul class="popup-menu__nav">
+            <li><a class="heading-h2" href="shop.html">Shop</a></li>
+            <li><a class="heading-h2" href="about.html">About</a></li>
+            <li><a class="heading-h2" href="futures.html">Futures</a></li>
+            <li><a class="heading-h2" href="login.html">Account</a></li>
+            <li><a class="heading-h2" href="#">Cart (0)</a></li>
+        </ul>
+    </div>
 
     <main>
         <!------------------- Hero ------------------->
@@ -57,6 +61,7 @@
         <!------------------- Products ------------------->
         <section class="products section">
             <div class="products__block block">
+                <!-- PEC 5: este listado pasará a ser un slider con JavaScript (flechas y arrastre) -->
                 <ul class="products__content">
                     <li class="products__card">
                         <a href="pdp.html" class="products__link">
@@ -97,10 +102,12 @@
                                 <span class="products__tag">only at crema</span>
                             </div>
                             <div class="products__image">
-                                <img src="media/product-striped-mug.webp" alt="White ceramic mug with hand-painted brown stripes">
+                                <img src="media/product-striped-mug.webp"
+                                    alt="White ceramic mug with hand-painted brown stripes">
                             </div>
                             <p class="products__rating">
-                                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                    class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
                                 (476)
                             </p>
                             <div class="products__info">
@@ -114,6 +121,50 @@
             </div>
         </section>
     </main>
+
+    <!------------------- Footer ------------------->
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__brand">
+                <img class="footer__logo" src="media/logo-crema-cream.svg" alt="Crema">
+                <p>Small-batch ceramic mugs for your daily rituals.</p>
+            </div>
+
+            <nav class="footer__col" aria-label="Shop">
+                <h4 class="footer__title">Shop</h4>
+                <ul>
+                    <li><a class="menu-link" href="shop.html">All products</a></li>
+                    <li><a class="menu-link" href="shop.html">Mugs</a></li>
+                    <li><a class="menu-link" href="shop.html">Cups</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__col" aria-label="Company">
+                <h4 class="footer__title">Crema</h4>
+                <ul>
+                    <li><a class="menu-link" href="about.html">About</a></li>
+                    <li><a class="menu-link" href="futures.html">Futures</a></li>
+                    <li><a class="menu-link" href="login.html">Account</a></li>
+                </ul>
+            </nav>
+
+            <!-- PEC 5: validación y envío del formulario con JavaScript -->
+            <form class="footer__newsletter">
+                <h4 class="footer__title">Join the club</h4>
+                <input type="email" placeholder="Your email" aria-label="Email">
+                <button type="submit" class="btn btn--light">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="footer__bottom">
+            <small>© 2026 Crema. All rights reserved.</small>
+            <ul class="footer__social">
+                <li><a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a></li>
+                <li><a href="#" aria-label="TikTok"><i class="ri-tiktok-line"></i></a></li>
+                <li><a href="#" aria-label="Pinterest"><i class="ri-pinterest-line"></i></a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 
 </html>
