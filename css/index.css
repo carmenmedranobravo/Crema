@@ -1,52 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Animations */
-@keyframes grain {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    20% {
-        transform: translate(-5%, 5%);
-    }
-
-    40% {
-        transform: translate(5%, -3%);
-    }
-
-    60% {
-        transform: translate(-3%, -5%);
-    }
-
-    80% {
-        transform: translate(4%, 4%);
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-
 :root {
 
     /* Colors */
-    --color-background: #F6F2EC;    /* Fondo principal (crema/blanco roto) */
-    --color-text: #1A1A1A;          /* Texto y botones (negro suave) */
-    --color-accent: #EAD2CB;        /* Detalles y fondos de productos (rosa suave) */
-    --color-secondary: #D9C7B8;     /* Secciones secundarias (beige/nude) */
-    --color-white: #FFFFFF;         /* Fondo de inputs */
 
     --color-background: #F6F2EC;
-    /* Color de fondo (crema/blanco roto) */
     --color-text: #1A1A1A;
-    /* Texto y botones (negro suave) */
     --color-accent: #EAD2CB;
-    /* Detalles y fondos de productos (rosa suave) */
     --color-secondary: #D9C7B8;
-    /* Secciones secundarias (beige/nude) */
     --color-white: #FFFFFF;
-    /* Fondo de inputs */
+    --color-header: #f1f0ed;
+    --color-header-text: #67645E;
+
 
     /* Sizes */
     --size-xxs: 8px;
@@ -85,7 +50,7 @@ html {
 }
 
 body {
-    background-color: var(--color-background);
+    background-color: var(--color-white);
     color: var(--color-text);
 }
 
@@ -258,10 +223,6 @@ label:not([for="acceptance"]) {
     margin: 0 auto;
 
 
-    & > nav {
-        flex: 1;
-    }
-    
     &>nav {
         flex: 1 1 0;
 
@@ -275,16 +236,37 @@ label:not([for="acceptance"]) {
         top: var(--size-xs);
         left: var(--size-xs);
         right: var(--size-xs);
+        max-width: calc(var(--size-canvas) - 2 * var(--size-xs));
         z-index: 5;
-        padding: var(--size-sm) var(--size-md);
-        border-radius: var(--radius-small);
+        padding: var(--size-md);
+        border-radius: .75rem .75rem 0 0;
         color: var(--color-background);
-        background-color: rgba(26, 26, 26, .25);
-        -webkit-backdrop-filter: blur(12px);
-        backdrop-filter: blur(12px);
         animation: header-solid linear both;
         animation-timeline: scroll();
         animation-range: 0 150px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            right: 0;
+            height: var(--size-xs);
+            background-color: var(--color-white);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: .75rem;
+            background:
+                radial-gradient(circle at 100% 100%, transparent calc(.75rem - 1px), var(--color-white) .75rem) left top / .75rem .75rem no-repeat,
+                radial-gradient(circle at 0 100%, transparent calc(.75rem - 1px), var(--color-white) .75rem) right top / .75rem .75rem no-repeat;
+            pointer-events: none;
+        }
 
         & .menu-link {
             opacity: 100%;
@@ -323,7 +305,7 @@ label:not([for="acceptance"]) {
 }
 
 /* El li justo después del logo (Search) empuja el grupo derecho al borde */
-.header__logo-item + li {
+.header__logo-item+li {
     margin-left: auto;
 }
 
@@ -342,7 +324,7 @@ label:not([for="acceptance"]) {
 }
 
 @media (max-width: 48rem) {
-    .header__nav > li:not(.header__logo-item):not(.open__menu-item) {
+    .header__nav>li:not(.header__logo-item):not(.open__menu-item) {
         display: none;
     }
 
@@ -360,7 +342,7 @@ label:not([for="acceptance"]) {
 @keyframes header-solid {
     to {
         background-color: var(--color-background);
-        color: var(--color-text);
+        color: var(--color-header-text);
     }
 }
 
@@ -373,7 +355,7 @@ label:not([for="acceptance"]) {
 @supports not (animation-timeline: scroll()) {
     .header.header--overlay {
         background-color: var(--color-background);
-        color: var(--color-text);
+        color: var(--color-header-text);
     }
 
     .header--overlay .header__logo {
@@ -381,7 +363,7 @@ label:not([for="acceptance"]) {
     }
 }
 
-#popup-menu{
+#popup-menu {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -393,18 +375,19 @@ label:not([for="acceptance"]) {
     padding: var(--size-lg);
     z-index: 10;
 
-    &:target{
+    &:target {
         display: flex;
     }
 
 }
-.popup-menu__nav{
+
+.popup-menu__nav {
     display: flex;
     flex-direction: column;
-    gap:var(--size-md);
+    gap: var(--size-md);
 }
 
-.close-popup{
+.close-popup {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -437,7 +420,7 @@ label:not([for="acceptance"]) {
         padding: var(--size-sm);
     }
 
-    /* Viñeta */
+    /* Líneas de barrido VHS */
     &::before {
         content: "";
         position: absolute;
@@ -446,27 +429,8 @@ label:not([for="acceptance"]) {
         width: 100%;
         height: 100%;
         z-index: 1;
-        background: radial-gradient(ellipse at center, transparent 50%, rgba(26, 26, 26, .55));
+        background: repeating-linear-gradient(to bottom, rgba(246, 242, 236, .05) 0 1px, transparent 1px 3px);
         pointer-events: none;
-    }
-
-    /* Grano */
-    &::after {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        z-index: 3;
-        background-image: url(../media/grain.svg);
-        opacity: .15;
-        pointer-events: none;
-        animation: grain .6s steps(1) infinite;
-
-        @media (prefers-reduced-motion: reduce) {
-            animation: none;
-        }
     }
 }
 
@@ -483,7 +447,8 @@ label:not([for="acceptance"]) {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: sepia(.25) saturate(.8) contrast(1.1) brightness(.8) blur(.4px);
+    filter: contrast(.85) saturate(.8) brightness(.95) blur(.5px);
+    border-radius: .75rem .75rem 0 0;
 }
 
 .hero__block {
@@ -532,9 +497,9 @@ label:not([for="acceptance"]) {
         opacity: 70%;
     }
 
-&:hover .products__hover {
-    opacity: 1;
-}
+    &:hover .products__hover {
+        opacity: 1;
+    }
 }
 
 .products__head {
