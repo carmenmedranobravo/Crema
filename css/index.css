@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 /* Animations */
 @keyframes grain {
     0% {
@@ -38,6 +37,16 @@
 @keyframes logo-dark {
     to {
         filter: brightness(.42);
+    }
+}
+
+@keyframes social-progress {
+    from {
+        transform: scaleX(.25);
+    }
+
+    to {
+        transform: scaleX(1);
     }
 }
 
@@ -376,7 +385,6 @@ label:not([for="acceptance"]) {
     }
 }
 
-
 /* Navegadores sin soporte: header sólido desde el principio */
 @supports not (animation-timeline: scroll()) {
     .header.header--overlay {
@@ -490,6 +498,7 @@ label:not([for="acceptance"]) {
 .products {
     padding-top: var(--size-lg);
 }
+
 .products__block {
     display: flex;
     flex-direction: column;
@@ -589,7 +598,6 @@ label:not([for="acceptance"]) {
     gap: var(--size-sm);
     text-transform: uppercase;
 }
-
 
 /* Banner */
 .banner__background {
@@ -704,6 +712,166 @@ label:not([for="acceptance"]) {
     }
 }
 
+/* Social */
+.social__block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-md);
+    padding: var(--size-md);
+    background-color: var(--color-background);
+    color: var(--color-header-text);
+    timeline-scope: --social;
+
+    @media (max-width: 48rem) {
+        padding: var(--size-sm);
+    }
+}
+
+.social__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--size-sm);
+
+    & h2 {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        letter-spacing: -.01em;
+    }
+}
+
+.social__content {
+    display: flex;
+    gap: var(--size-sm);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-timeline: --social x;
+    margin-inline: calc(var(--size-md) * -1);
+    padding-inline: var(--size-md);
+    scroll-padding-inline: var(--size-md);
+    scroll-behavior: smooth;
+
+    @media (max-width: 48rem) {
+        margin-inline: calc(var(--size-sm) * -1);
+        padding-inline: var(--size-sm);
+        scroll-padding-inline: var(--size-sm);
+    }
+}
+
+.social__card {
+   flex: 0 0 calc((100% - 3 * var(--size-sm)) / 3.4);
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: var(--radius-small);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+
+    @media (max-width: 48rem) {
+        flex-basis: 75%;
+    }
+
+    & picture {
+        display: block;
+        height: 100%;
+    }
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.social__controls {
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+}
+
+.social__progress {
+    flex: 1;
+    height: .125rem;
+    background-color: rgba(103, 100, 94, .2);
+
+    &::after {
+        content: "";
+        display: block;
+        height: 100%;
+        background-color: var(--color-header-text);
+        transform-origin: left;
+        animation: social-progress linear both;
+        animation-timeline: --social;
+    }
+}
+
+/* Navegadores sin soporte: se oculta el relleno de la barra */
+@supports not (animation-timeline: scroll()) {
+    .social__progress::after {
+        display: none;
+    }
+}
+
+/* Flechas del carrusel, generadas por CSS (Chrome y Edge) */
+@supports selector(::scroll-button(right)) {
+    .social__content {
+        scrollbar-width: none;
+
+        &::scroll-button(left),
+        &::scroll-button(right) {
+            position: absolute;
+            bottom: var(--size-md);
+            width: 2.75rem;
+            height: 2.75rem;
+            font-family: "remixicon";
+            font-size: 20px;
+            color: inherit;
+            background-color: transparent;
+            border: .0625rem solid currentColor;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: opacity 200ms;
+
+            @media (max-width: 48rem) {
+                bottom: var(--size-sm);
+            }
+        }
+
+        &::scroll-button(left) {
+            content: "\ea64" / "Previous";
+            right: calc(var(--size-md) + 2.75rem + var(--size-xs));
+
+            @media (max-width: 48rem) {
+                right: calc(var(--size-sm) + 2.75rem + var(--size-xs));
+            }
+        }
+
+        &::scroll-button(right) {
+            content: "\ea6e" / "Next";
+            right: var(--size-md);
+
+            @media (max-width: 48rem) {
+                right: var(--size-sm);
+            }
+        }
+
+        &::scroll-button(*):hover {
+            opacity: 70%;
+        }
+
+        &::scroll-button(*):disabled {
+            opacity: 30%;
+            cursor: default;
+        }
+    }
+
+    /* Deja hueco a la derecha de la barra para las flechas */
+    .social__controls {
+        padding-right: calc(2 * 2.75rem + var(--size-xs) + var(--size-md));
+    }
+}
+
 /* Footer */
 .footer {
     max-width: var(--size-canvas);
@@ -718,7 +886,7 @@ label:not([for="acceptance"]) {
     overflow: hidden;
 }
 
-/* Logo relleno de vídeo con grano */
+/* Logo relleno de color con grano */
 .footer__logo {
     position: relative;
     width: 100%;
@@ -727,8 +895,7 @@ label:not([for="acceptance"]) {
     overflow: hidden;
     background-color: var(--color-burgundy);
     -webkit-mask: url(../media/logo-crema-cream.svg) center / contain no-repeat;
-mask: url(../media/logo-crema-cream.svg) center / contain no-repeat;
-
+    mask: url(../media/logo-crema-cream.svg) center / contain no-repeat;
 
     @media (max-width: 48rem) {
         width: 80%;
@@ -753,7 +920,6 @@ mask: url(../media/logo-crema-cream.svg) center / contain no-repeat;
         }
     }
 }
-
 
 .footer__content {
     display: grid;
