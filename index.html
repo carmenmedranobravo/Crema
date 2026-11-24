@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="icon" href="media/icono-crema.svg" type="image/svg+xml">
+    <link rel="icon" href="media/icon-crema.svg" type="image/svg+xml">
     <title>Crema</title>
 </head>
 
@@ -26,12 +26,12 @@
                 <li><a class="menu-link" href="#">Search</a></li>
                 <li><a class="menu-link" href="login.html">Account</a></li>
                 <li><a class="menu-link" href="#">Cart (0)</a></li>
+                <li class="open__menu-item">
+                    <a class="open__menu" href="#popup-menu" aria-label="Open menu"><i class="ri-menu-line"></i></a>
+                </li>
             </ul>
-            <li class="open__menu-item">
-                <a class="open__menu" href="#popup-menu" aria-label="Open menu"><i class="ri-menu-line"></i></a>
-            </li>
             <div id="popup-menu">
-                <a class="close-popup" href="#"><i class="ri-close-line"></i></a>
+                <a class="close-popup" href="#" aria-label="Close menu"><i class="ri-close-line"></i></a>
                 <ul class="popup-menu__nav">
                     <li><a class="heading-h2" href="shop.html">Shop</a></li>
                     <li><a class="heading-h2" href="about.html">About</a></li>
@@ -47,8 +47,8 @@
         <!------------------- Hero ------------------->
         <section class="hero">
             <div class="hero__background img-radius">
-                <video class="hero__video" autoplay muted loop playsinline poster="media/hero-home.webp">
-                    <source src="media/latte-art-hq.mp4" type="video/mp4">
+                <video class="hero__video" autoplay muted loop playsinline>
+                    <source src="media/hero-home.mp4" type="video/mp4">
                 </video>
                 <div class="hero__block block">
                     <span class="hero__tag">The morning collection</span>
@@ -83,7 +83,8 @@
                             <div class="products__info">
                                 <p class="products__rating">
                                     <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                                        class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i>
+                                        class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                        class="ri-star-line"></i>
                                     (400)
                                 </p>
                                 <span class="heading-h4">€26.00</span>
@@ -112,7 +113,8 @@
                             <div class="products__info">
                                 <p class="products__rating">
                                     <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                                        class="ri-star-fill"></i><i class="ri-star-half-fill"></i><i class="ri-star-line"></i>
+                                        class="ri-star-fill"></i><i class="ri-star-half-fill"></i><i
+                                        class="ri-star-line"></i>
                                     (327)
                                 </p>
                                 <span class="heading-h4">€22.00</span>
@@ -154,50 +156,118 @@
 
             </div>
         </section>
-
+        <!------------------- Banner ------------------->
+        <section class="banner section">
+            <div class="banner__background img-radius">
+                <picture>
+                    <source srcset="media/banner.avif" type="image/avif">
+                    <source srcset="media/banner.webp" type="image/webp">
+                    <img class="banner__image" src="media/banner.jpg" alt="">
+                </picture>
+                <div class="banner__block block">
+                    <h2>made slowly, loved daily</h2>
+                    <p>At Crema, every mug is shaped, glazed and fired by hand in small batches.
+                        No two are ever the same, just like your mornings. Pieces made to be held,
+                        used and reached for every day, from the first coffee to the last tea.</p>
+                    <a href="shop.html" class="btn btn--outline">Shop crema</a>
+                </div>
+            </div>
+        </section>
+        <!------------------- CTA ------------------->
+        <section class="cta section">
+            <div class="cta__block block img-radius">
+                <div class="cta__content">
+                    <h2>hold it close</h2>
+                    <p>Our pinched mug is shaped to sit in both hands, keeping your coffee warm
+                        while you take the morning slowly. Raw clay outside, glossy glaze inside.</p>
+                    <a href="pdp.html" class="btn btn--outline">Pinched mug</a>
+                </div>
+                <div class="cta__image">
+                    <picture>
+                        <source srcset="media/cta.avif" type="image/avif">
+                        <source srcset="media/cta.webp" type="image/webp">
+                        <img src="media/cta.avif" alt="Hands holding a pinched stoneware mug of coffee">
+                    </picture>
+                </div>
+            </div>
+        </section>
+        <!------------------- CTA ------------------->
+<section class="cta section">
+    <div class="cta__block block img-radius">
+        <div class="cta__image">
+            <picture>
+                <source srcset="media/cta2.avif" type="image/avif">
+                <source srcset="media/cta2.webp" type="image/webp">
+                <img src="media/cta2.jpg" alt="Set of handmade ceramic mugs in different glazes">
+            </picture>
+        </div>
+        <div class="cta__content">
+            <h2>every last sip</h2>
+            <p>Thick stoneware walls keep your drink warm down to the very last sip.
+                Glazed inside, dishwasher safe and made to be used every single day,
+                not saved for special occasions.</p>
+            <a href="shop.html" class="btn btn--outline">Shop all mugs</a>
+        </div>
+    </div>
+</section>
     </main>
 
     <!------------------- Footer ------------------->
     <footer class="footer">
-        <div class="footer__content">
-            <div class="footer__brand">
-                <img class="footer__logo" src="media/logo-crema-cream.svg" alt="Crema">
-                <p>Small-batch ceramic mugs for your daily rituals.</p>
+        <div class="footer__block">
+            <div class="footer__logo" role="img" aria-label="Crema"></div>
+
+            <div class="footer__content">
+                <!-- PEC 5: validación y envío del formulario con JavaScript -->
+                <form class="footer__newsletter">
+                    <p>Join the club for slow mornings.</p>
+                    <p>New drops, studio stories and restock alerts, straight to your inbox.</p>
+                    <div class="footer__field">
+                        <input type="email" placeholder="Email address" aria-label="Email address" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </div>
+                    <p class="footer__note">By signing up, you agree to our <a href="#">Privacy Policy</a>.</p>
+                </form>
+
+                <nav class="footer__links" aria-label="Footer">
+                    <div class="footer__col">
+                        <h4 class="footer__title">Navigate</h4>
+                        <ul>
+                            <li><a href="shop.html">Shop</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="futures.html">Futures</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__title">Social</h4>
+                        <ul>
+                            <li><a href="#"><i class="ri-instagram-line"></i>Instagram</a></li>
+                            <li><a href="#"><i class="ri-tiktok-line"></i>TikTok</a></li>
+                            <li><a href="#"><i class="ri-pinterest-line"></i>Pinterest</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__title">Official</h4>
+                        <ul>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__title">Support</h4>
+                        <ul>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="login.html">Account</a></li>
+                            <li><a href="#">Shipping</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
 
-            <nav class="footer__col" aria-label="Shop">
-                <h4 class="footer__title">Shop</h4>
-                <ul>
-                    <li><a class="menu-link" href="shop.html">All products</a></li>
-                    <li><a class="menu-link" href="shop.html">Mugs</a></li>
-                    <li><a class="menu-link" href="shop.html">Cups</a></li>
-                </ul>
-            </nav>
-
-            <nav class="footer__col" aria-label="Company">
-                <h4 class="footer__title">Crema</h4>
-                <ul>
-                    <li><a class="menu-link" href="about.html">About</a></li>
-                    <li><a class="menu-link" href="futures.html">Futures</a></li>
-                    <li><a class="menu-link" href="login.html">Account</a></li>
-                </ul>
-            </nav>
-
-            <!-- PEC 5: validación y envío del formulario con JavaScript -->
-            <form class="footer__newsletter">
-                <h4 class="footer__title">Join the club</h4>
-                <input type="email" placeholder="Your email" aria-label="Email">
-                <button type="submit" class="btn btn--light">Subscribe</button>
-            </form>
-        </div>
-
-        <div class="footer__bottom">
-            <small>© 2026 Crema. All rights reserved.</small>
-            <ul class="footer__social">
-                <li><a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a></li>
-                <li><a href="#" aria-label="TikTok"><i class="ri-tiktok-line"></i></a></li>
-                <li><a href="#" aria-label="Pinterest"><i class="ri-pinterest-line"></i></a></li>
-            </ul>
+            <div class="footer__bottom">
+                <small>© 2026 Crema. All rights reserved.</small>
+            </div>
         </div>
     </footer>
 </body>
