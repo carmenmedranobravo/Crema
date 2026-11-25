@@ -36,7 +36,7 @@
 
 @keyframes logo-dark {
     to {
-        filter: brightness(.42);
+        background-color: var(--color-burgundy);
     }
 }
 
@@ -256,6 +256,15 @@ label:not([for="acceptance"]) {
     background-color: var(--color-secondary);
 }
 
+/* Logo (header y footer) */
+.logo {
+    display: block;
+    aspect-ratio: 4.5 / 1;
+    background-color: var(--color-burgundy);
+    -webkit-mask: url(../media/logo-crema-cream.svg) center / contain no-repeat;
+    mask: url(../media/logo-crema-cream.svg) center / contain no-repeat;
+}
+
 /* Header */
 .header {
     position: relative;
@@ -323,6 +332,7 @@ label:not([for="acceptance"]) {
         }
 
         & .header__logo {
+            background-color: var(--color-background);
             animation: logo-dark linear both;
             animation-timeline: scroll();
             animation-range: 0 150px;
@@ -350,17 +360,15 @@ label:not([for="acceptance"]) {
     transform: translate(-50%, -50%);
 }
 
-/* Search empuja el grupo derecho al borde */
+
 .header__logo-item+li {
     margin-left: auto;
 }
 
 .header__logo {
-    display: block;
-    max-width: 92px;
+    width: 160px;
 }
 
-/* Botón de menú (solo móvil) */
 .open__menu-item {
     display: none;
 }
@@ -393,7 +401,7 @@ label:not([for="acceptance"]) {
     }
 
     .header--overlay .header__logo {
-        filter: brightness(.42);
+        background-color: var(--color-burgundy);
     }
 }
 
@@ -948,16 +956,12 @@ label:not([for="acceptance"]) {
     overflow: hidden;
 }
 
-/* Logo relleno de color con grano */
+/* Logo con grano */
 .footer__logo {
     position: relative;
     width: 100%;
-    aspect-ratio: 4.5 / 1;
     margin: var(--size-ml) auto;
     overflow: hidden;
-    background-color: var(--color-burgundy);
-    -webkit-mask: url(../media/logo-crema-cream.svg) center / contain no-repeat;
-    mask: url(../media/logo-crema-cream.svg) center / contain no-repeat;
 
     @media (max-width: 48rem) {
         width: 80%;
