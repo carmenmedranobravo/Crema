@@ -494,6 +494,43 @@ label:not([for="acceptance"]) {
     letter-spacing: .04em;
 }
 
+/* Hero: modificadores para páginas interiores */
+.hero__background--small {
+    min-height: 60vh;
+    justify-content: center;
+
+    @media (max-width: 48rem) {
+        min-height: 40vh;
+    }
+}
+
+.hero__block--center {
+    align-items: center;
+    text-align: center;
+
+    & h1 {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+    }
+}
+
+/* Hero con foto en vez de vídeo */
+.hero__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: brightness(.85);
+    }
+}
+
 /* Products */
 .products {
     padding-top: var(--size-lg);
@@ -506,20 +543,14 @@ label:not([for="acceptance"]) {
 }
 
 .products__content {
-    display: flex;
-    gap: var(--size-md);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: var(--size-sm);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+    column-gap: var(--size-md);
+    row-gap: var(--size-ml);
 }
 
 .products__card {
-    flex: 0 0 calc((100% - 2 * var(--size-md)) / 3);
-    scroll-snap-align: start;
-
-    @media (max-width: 48rem) {
-        flex-basis: 85%;
-    }
+    min-width: 0;
 }
 
 .products__link {
@@ -597,6 +628,37 @@ label:not([for="acceptance"]) {
     align-items: center;
     gap: var(--size-sm);
     text-transform: uppercase;
+}
+
+/* Filters */
+.filters__block {
+    color: var(--color-header-text);
+}
+
+.filters__list {
+    display: flex;
+    justify-content: safe center;
+    gap: var(--size-sm);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.filters__pill {
+    display: inline-block;
+    padding: var(--size-xs) var(--size-md);
+    font: 400 clamp(15px, 1.5vw, 20px) "Inter", sans-serif;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border: .0625rem solid currentColor;
+    border-radius: 6.25rem;
+    transition: background-color 200ms, color 200ms;
+
+    &:hover,
+    &.filters__pill--active {
+        background-color: var(--color-header-text);
+        border-color: var(--color-header-text);
+        color: var(--color-white);
+    }
 }
 
 /* Banner */

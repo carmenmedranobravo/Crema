@@ -11,20 +11,6 @@
 </head>
 
 <body>
-    <!------------------- Hero ------------------->
-        <section class="hero">
-            <div class="hero__background img-radius">
-                <video class="hero__video" autoplay muted loop playsinline>
-                    <source src="media/hero-home.mp4" type="video/mp4">
-                </video>
-                <div class="hero__block block">
-                    <span class="hero__tag">The morning collection</span>
-                    <h1>Therapy is expensive, get a coffee.</h1>
-                    <a href="shop.html" class="btn btn--outline">Shop now</a>
-                </div>
-            </div>
-        </section>
-
     <!------------------- Cabecera ------------------->
     <header class="header header--overlay">
         <nav>
@@ -54,11 +40,37 @@
                     <li><a class="heading-h2" href="#">Cart (0)</a></li>
                 </ul>
             </div>
-            
         </nav>
     </header>
+
     <main>
-     <!------------------- Products ------------------->
+        <!------------------- Hero ------------------->
+        <section class="hero">
+            <div class="hero__background hero__background--small img-radius">
+                <picture class="hero__image">
+                    <source srcset="media/hero-shop.avif" type="image/avif">
+                    <source srcset="media/hero-shop.webp" type="image/webp">
+                    <img src="media/hero-shop.jpg" alt="">
+                </picture>
+                <div class="hero__block hero__block--center block">
+                    <h1 class="heading-h2">Made by hand, for EVERY morning.</h1>
+                </div>
+            </div>
+        </section>
+<!------------------- Filters ------------------->
+<section class="filters section">
+    <div class="filters__block block">
+        <ul class="filters__list">
+            <li><a class="filters__pill" href="#">Featured</a></li>
+            <li><a class="filters__pill" href="#">Mugs</a></li>
+            <li><a class="filters__pill" href="#">Cups</a></li>
+            <li><a class="filters__pill" href="#">Sets</a></li>
+            <li><a class="filters__pill" href="#">Gifts</a></li>
+            <li><a class="filters__pill filters__pill--active" href="#" aria-current="page">Shop all</a></li>
+        </ul>
+    </div>
+</section>
+        <!------------------- Products ------------------->
         <section class="products section">
             <div class="products__block block">
                 <ul class="products__content">
@@ -152,13 +164,13 @@
                             <p>Pinched stoneware with hand-painted cocoa stripes</p>
                         </a>
                     </li>
-                    
+
                 </ul>
             </div>
         </section>
-</main>
+    </main>
 
-       <!------------------- Footer ------------------->
+    <!------------------- Footer ------------------->
     <footer class="footer">
         <div class="footer__block">
             <div class="footer__logo" role="img"></div>
@@ -217,4 +229,5 @@
         </div>
     </footer>
 </body>
+
 </html>
